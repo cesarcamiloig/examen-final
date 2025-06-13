@@ -1,21 +1,19 @@
-package com.example.demo.model;
+package com.examen.model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "cajero")
-public class Cajero {
+@Table(name = "cliente")
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String documento;
-    private String email;
-    private String token;
     
     @ManyToOne
-    @JoinColumn(name = "tienda_id")
-    private Tienda tienda;
+    @JoinColumn(name = "tipo_documento_id")
+    private TipoDocumento tipoDocumento;
 
     // Getters y setters
     public Long getId() { return id; }
@@ -24,10 +22,6 @@ public class Cajero {
     public void setNombre(String nombre) { this.nombre = nombre; }
     public String getDocumento() { return documento; }
     public void setDocumento(String documento) { this.documento = documento; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-    public String getToken() { return token; }
-    public void setToken(String token) { this.token = token; }
-    public Tienda getTienda() { return tienda; }
-    public void setTienda(Tienda tienda) { this.tienda = tienda; }
+    public TipoDocumento getTipoDocumento() { return tipoDocumento; }
+    public void setTipoDocumento(TipoDocumento tipoDocumento) { this.tipoDocumento = tipoDocumento; }
 }

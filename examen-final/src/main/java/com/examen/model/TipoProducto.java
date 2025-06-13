@@ -1,10 +1,10 @@
-package com.example.demo.model;
+package com.examen.model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tipo_documento")
-public class TipoDocumento {
+@Table(name = "tipo_producto")
+public class TipoProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
